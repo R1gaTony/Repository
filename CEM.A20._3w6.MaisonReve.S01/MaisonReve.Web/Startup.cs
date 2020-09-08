@@ -25,7 +25,7 @@ namespace MaisonReve.Web
         {
             //Ajouter les vues et controlleurs au DI
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
+            //Ajout de singleton
             services.AddSingleton<BuildingRepo>();
         }
 
