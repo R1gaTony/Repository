@@ -5,7 +5,8 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZombiesPartyPersonas", "ZombiesPartyPersonas\ZombiesPartyPersonas.csproj", "{43D40C41-EA82-439E-B70F-19B10F7466BD}"
 EndProject
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZombiesParty_Tests", "ZombiesParty_Tests\ZombiesParty_Tests.csproj", "{12FB599D-549C-48AA-A560-77B85B573F0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +21,10 @@ Global
 		{8919AD44-455A-4BD6-8C58-DFD85BF0CAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8919AD44-455A-4BD6-8C58-DFD85BF0CAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8919AD44-455A-4BD6-8C58-DFD85BF0CAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FB599D-549C-48AA-A560-77B85B573F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FB599D-549C-48AA-A560-77B85B573F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FB599D-549C-48AA-A560-77B85B573F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FB599D-549C-48AA-A560-77B85B573F0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
