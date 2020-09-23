@@ -5,42 +5,41 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MaisonReve.Database.Context;
+using MaisonReve.Database.Exceptions;
 using MaisonReve.Database.Models;
+using MaisonReve.Database.Repository;
 
 namespace MaisonReve.Web.Controllers
 {
     public class BuildingsController : Controller
     {
-        private readonly MaisonReveDbContext _context;
+        private readonly IBuildingRepo _repo;
 
-        public BuildingsController(MaisonReveDbContext context)
+        public BuildingsController(IBuildingRepo repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         // GET: Buildings
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Buildings.ToListAsync());
+            return View(_repo.GetAllBuildings());
         }
 
         // GET: Buildings/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
-            if (id == null)
-            {
+            try{
+
+                var building = this._repo.GetBuildingById(id??0);
+                return View(building);
+                    
+
+            }catch(NotFoundException){
+               
                 return NotFound();
             }
 
-            var building = await _context.Buildings
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (building == null)
-            {
-                return NotFound();
-            }
-
-            return View(building);
         }
 
         // GET: Buildings/Create
@@ -54,31 +53,43 @@ namespace MaisonReve.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Address,PhoneNumber,OwnerFirstName,OwnerLastName,Description,Published")] Building building)
+        public IActionResult Create([Bind("Id,Name,Address,PhoneNumber,OwnerFirstName,OwnerLastName,Description,Published")] Building building)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(building);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try{
+
+                         _repo.Add(building);
+                         return RedirectToAction(nameof(Index));
+                
+                }catch(BuildingRepoException e){
+
+                        this.ModelState.AddModelError(e.Property, e.Message);
+
+                }
+               
+
+               
             }
             return View(building);
         }
 
         // GET: Buildings/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
-            if (id == null)
-            {
+
+            try{
+
+                var building = this._repo.GetBuildingById(id);
+                return View(building);
+                    
+
+            }catch(NotFoundException){
+               
                 return NotFound();
             }
 
-            var building = await _context.Buildings.FindAsync(id);
-            if (building == null)
-            {
-                return NotFound();
-            }
-            return View(building);
+
         }
 
         // POST: Buildings/Edit/5
@@ -86,68 +97,123 @@ namespace MaisonReve.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,PhoneNumber,OwnerFirstName,OwnerLastName,Description,Published")] Building building)
+        public IActionResult Edit(int id, [Bind("Id,Name,Address,PhoneNumber,OwnerFirstName,OwnerLastName,Description,Published")] Building building)
         {
-            if (id != building.Id)
-            {
-                return NotFound();
-            }
-
+   
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(building);
-                    await _context.SaveChangesAsync();
+                try{
+
+                         _repo.Edit(building);
+                         return RedirectToAction(nameof(Index));
+                
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BuildingExists(building.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                catch(NotFoundException){
+                //log me!
+                return NotFound();
+                
                 }
-                return RedirectToAction(nameof(Index));
+                catch(BuildingRepoException e){
+
+                        this.ModelState.AddModelError(e.Property, e.Message);
+
+                }
+                                 
             }
             return View(building);
         }
 
-        // GET: Buildings/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+
+        public IActionResult Publish(int? id)
         {
-            if (id == null)
-            {
+
+            try{
+
+                _repo.Publish(id);
+                return RedirectToAction(nameof(Index));
+                
+                }catch(NotFoundException){
+                //log me!
+                return NotFound();
+                
+                }
+                catch(BuildingRepoException e){
+
+                        this.ModelState.AddModelError(e.Property, e.Message);
+
+                }
+               
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+       public IActionResult Unpublish(int? id)
+        {
+             try{
+
+                         _repo.Unpublish(id);
+                         return RedirectToAction(nameof(Index));
+                
+                }catch(NotFoundException){
+                //log me!
+                return NotFound();
+                
+                }
+                catch(BuildingRepoException){
+
+                    //do nothing. 
+                   
+                }
+               
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
+        // GET: Buildings/Delete/5
+        public IActionResult Delete(int? id)
+        {
+             try{
+
+                var building = this._repo.GetBuildingById(id);
+                return View(building);
+                    
+
+            }catch(NotFoundException){
+              
                 return NotFound();
             }
 
-            var building = await _context.Buildings
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (building == null)
-            {
-                return NotFound();
-            }
 
-            return View(building);
+            
         }
 
         // POST: Buildings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public  IActionResult DeleteConfirmed(int id)
         {
-            var building = await _context.Buildings.FindAsync(id);
-            _context.Buildings.Remove(building);
-            await _context.SaveChangesAsync();
+                try{
+
+                         _repo.RemoveBuilding(id);
+                         return RedirectToAction(nameof(Index));
+                
+                }
+                catch(NotFoundException){
+                //log me!
+                return NotFound();
+                
+                }
+                catch(BuildingRepoException e){
+
+                        this.ModelState.AddModelError(e.Property, e.Message);
+
+                }
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BuildingExists(int id)
-        {
-            return _context.Buildings.Any(e => e.Id == id);
-        }
+     
     }
 }

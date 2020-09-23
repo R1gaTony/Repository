@@ -58,3 +58,12 @@
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+<hr/>
+
+<div class="card ">
+      <div class="card-header bg-primary text-white">@Html.DisplayNameFor(model => model.RentingLots)</div>
+      <div class="card-body">
+    <partial name="_RentingLotsDetails" model="@Model.RentingLots" />
+</div>
+
+</div>

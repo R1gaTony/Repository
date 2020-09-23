@@ -57,10 +57,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Published)
+            <td class="text-nowrap">
+                @if(!item.Published && item.RentingLots.Any()){
+
+                    <a class="btn btn-primary" asp-action="Publish" asp-route-id="@item.Id">Publier</a>
+
+                }
+                @if(item.Published)
+                {
+
+    	          
+                      <span><a class="btn btn-danger" asp-action="Unpublish" asp-route-id="@item.Id">défaire</a></span>
+                }
+               
             </td>
-            <td>
+            <td class="text-nowrap">
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
