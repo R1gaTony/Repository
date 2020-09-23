@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MaisonReve.Database.Models {
@@ -62,5 +64,10 @@ namespace MaisonReve.Database.Models {
             [MaxLength(1500, ErrorMessage="Maximum de 1500 caractères pour l'adresse.")]
             public string Description{get;set;}
 
+            [Display(Name = "Publié")]
+            public Boolean Published {get; set;}
+
+            [Display(Name = "Lots locatifs")]
+            public virtual List<RentingLot> RentingLots{get; set;}
     }
 }
