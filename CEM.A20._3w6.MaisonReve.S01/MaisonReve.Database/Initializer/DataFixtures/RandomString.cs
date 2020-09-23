@@ -288,37 +288,45 @@ public static string [] lastNames = new string[]{
 ,"Boswood"
 ,"Canding"};
 
-public static string GeneratePhoneNumber(){
+public static string GeneratePhoneNumber(int seedData){
 
-var r = new Random();
+var r = new Random(seedData);
 return $"{r.Next(1,9)}{r.Next(1,9)}{r.Next(1,9)}-{r.Next(1,9)}{r.Next(1,9)}{r.Next(1,9)}-{r.Next(1,9)}{r.Next(1,9)}{r.Next(1,9)}{r.Next(1,9)}";
 
 }
 
-public static string GenerateName(){
-var random = new Random();
+public static string GenerateName(int seedData){
+var random = new Random(seedData);
 return names[random.Next(0,names.Length-1)];
     
 }
 
-public static string GenerateLastName(){
-var random = new Random();
+public static string GenerateLastName(int seedData){
+var random = new Random(seedData);
 return lastNames[random.Next(0,lastNames.Length-1)];
     
 }
 
 
-public static decimal GenerateDecimal(int minimum=1, int maximimum = 10000){
+public static decimal GenerateDecimal(int seedData,int minimum=1, int maximimum = 10000){
 
-var random = new Random();
+var random = new Random(seedData);
 return (random.Next(minimum*100,maximimum*100) / 100.0m);
 }
 
-public static string GenerateAddress(){
+
+public static int GenerateInteger(int seedData,int minimum=1, int maximimum = 10000){
+
+var random = new Random(seedData);
+return (random.Next(minimum,maximimum));
+}
+
+
+public static string GenerateAddress(int seedData){
  
  
  var el = string.Empty;
-var random = new Random();
+var random = new Random(seedData);
 
 var zipCode = zipCodes[random.Next(0,zipCodes.Length-1)].Split(',');
 var streetName = streetNames[random.Next(0,streetNames.Length-1)];
