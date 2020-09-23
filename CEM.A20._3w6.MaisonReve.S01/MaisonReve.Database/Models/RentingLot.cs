@@ -52,6 +52,7 @@ public RentingLot()
             this.LeaseLength = rentingLot.LeaseLength;
             this.NumberOfRooms = rentingLot.NumberOfRooms;
             this.RentingLotType = rentingLot.RentingLotType;
+            this.BuildingId = rentingLot.BuildingId;
         }
 
 

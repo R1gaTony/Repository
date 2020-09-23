@@ -1,0 +1,62 @@
+@model MaisonReve.Database.Models.RentingLot
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RentingLot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LotNumber" class="control-label"></label>
+                <input asp-for="LotNumber" class="form-control" />
+                <span asp-validation-for="LotNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Terms" class="control-label"></label>
+                <select asp-for="Terms" asp-items="Html.GetEnumSelectList<RentTerm>()" class="form-control"></select>
+                <span asp-validation-for="Terms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaseLength" class="control-label"></label>
+                <input asp-for="LeaseLength" class="form-control" />
+                <span asp-validation-for="LeaseLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfRooms" class="control-label"></label>
+                <input asp-for="NumberOfRooms" class="form-control" />
+                <span asp-validation-for="NumberOfRooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentingLotType" class="control-label"></label>
+                <select asp-for="RentingLotType" asp-items="Html.GetEnumSelectList<RentingLotType>()" class="form-control"></select>
+                <span asp-validation-for="RentingLotType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuildingId" class="control-label"></label>
+                <select asp-for="BuildingId" class ="form-control" asp-items="ViewBag.BuildingId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
