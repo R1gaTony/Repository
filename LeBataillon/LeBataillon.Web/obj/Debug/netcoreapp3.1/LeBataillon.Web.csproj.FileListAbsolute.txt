@@ -417,3 +417,5 @@ E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repositor
 E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Web\obj\Debug\netcoreapp3.1\LeBataillon.Web.dll
 E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Web\obj\Debug\netcoreapp3.1\LeBataillon.Web.pdb
 E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Web\obj\Debug\netcoreapp3.1\LeBataillon.Web.genruntimeconfig.cache
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Web\bin\Debug\netcoreapp3.1\Castle.Core.dll
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll

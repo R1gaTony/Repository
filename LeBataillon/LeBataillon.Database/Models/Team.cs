@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace LeBataillon.Database.Models
 {
     public class Team
@@ -9,11 +12,11 @@ namespace LeBataillon.Database.Models
 
         }
 
-        public Team(int Id, string TeamName, int Captain)
+        public Team(int Id, string TeamName, int? Captain)
         {
             this.Id = Id;
             this.TeamName = TeamName;
-            this.Captain = Captain;
+            this.CaptainId = Captain;
 
         } 
 
@@ -21,12 +24,15 @@ namespace LeBataillon.Database.Models
         {
             this.Id = t.Id;
             this.TeamName = t.TeamName;
-            this.Captain = t.Captain;
+            this.CaptainId = t.CaptainId;
 
         } 
         public int Id { get; set; }
         public string TeamName { get; set; }
-        public int Captain { get; set; }
-
+        public int? CaptainId { get; set; }
+        [ForeignKey("CaptainId")]
+        public Player Captain;
+        [InverseProperty("Team")]
+        public List<Player> Players;
     }
 }

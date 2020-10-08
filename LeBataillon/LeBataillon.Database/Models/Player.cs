@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace LeBataillon.Database.Models
@@ -40,6 +41,12 @@ namespace LeBataillon.Database.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public PlayerLevel Level { get; set; }
+        public int TeamId {get;set;}
+        public virtual Team Team {get; set;}
 
+        public static implicit operator Player(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

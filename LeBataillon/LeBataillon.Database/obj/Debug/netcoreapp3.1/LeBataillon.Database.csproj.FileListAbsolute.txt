@@ -1,0 +1,12 @@
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\bin\Debug\netcoreapp3.1\LeBataillon.Database.deps.json
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\bin\Debug\netcoreapp3.1\LeBataillon.Database.runtimeconfig.json
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\bin\Debug\netcoreapp3.1\LeBataillon.Database.runtimeconfig.dev.json
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\bin\Debug\netcoreapp3.1\LeBataillon.Database.dll
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\bin\Debug\netcoreapp3.1\LeBataillon.Database.pdb
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.csprojAssemblyReference.cache
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.AssemblyInfoInputs.cache
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.AssemblyInfo.cs
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.csproj.CoreCompileInputs.cache
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.dll
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.pdb
+E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netcoreapp3.1\LeBataillon.Database.genruntimeconfig.cache
