@@ -1,9 +1,0 @@
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\bin\Debug\netstandard2.0\TP1_Depart.Database.deps.json
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\bin\Debug\netstandard2.0\TP1_Depart.Database.dll
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\bin\Debug\netstandard2.0\TP1_Depart.Database.pdb
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\obj\Debug\netstandard2.0\TP1_Depart.Database.csprojAssemblyReference.cache
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\obj\Debug\netstandard2.0\TP1_Depart.Database.AssemblyInfoInputs.cache
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\obj\Debug\netstandard2.0\TP1_Depart.Database.AssemblyInfo.cs
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\obj\Debug\netstandard2.0\TP1_Depart.Database.csproj.CoreCompileInputs.cache
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\obj\Debug\netstandard2.0\TP1_Depart.Database.dll
-E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\TP1_Depart.Database\obj\Debug\netstandard2.0\TP1_Depart.Database.pdb
