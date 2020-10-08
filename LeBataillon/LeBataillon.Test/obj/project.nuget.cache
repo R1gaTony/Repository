@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Xkw8cXJ7gYcexL6acjW39+nD8pXx6JdKY/eyVJ3KAk5Kdzawd5Mc9WpTV+jP/ZYo4FbByF2x3FMoxb1WzXrvw==",
+  "dgSpecHash": "i9C3AeqIgP3hx4WizEITbriXUdCyDnekY1yNzu7gpSchAJuOkj3vyRVv1Qx/RcRHeYg4u2gfxAaRwdziVbLO3Q==",
   "success": true,
-  "projectFilePath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
+  "projectFilePath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

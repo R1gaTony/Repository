@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AuDfzEeivtWwGmEezlOiFU5OAvSlkla7zXQUdlkB4zqeSOGp6uJBmGn8h97BhhiSHbLZXtZx/LFCAzCd9QNktQ==",
+  "dgSpecHash": "+3oyTumgjGttw6vokl8B9dtLk1kCuDhdzGziSl5A+p9GRf5smNrp9ZX5q++yE2OrW2c83frB7pey8fKxv+pp9Q==",
   "success": true,
-  "projectFilePath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
+  "projectFilePath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.7\\microsoft.aspnetcore.mvc.razor.extensions.3.1.7.nupkg.sha512",

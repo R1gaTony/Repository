@@ -6,3 +6,4 @@ E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repositor
 E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netstandard2.0\LeBataillon.Database.csproj.CoreCompileInputs.cache
 E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netstandard2.0\LeBataillon.Database.dll
 E:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netstandard2.0\LeBataillon.Database.pdb
+e:\Cegep informatique\Automne 2020\Prog Web Transactionnelle\GitKraken\Repository\LeBataillon\LeBataillon.Database\obj\Debug\netstandard2.0\LeBataillon.Database.csprojAssemblyReference.cache
