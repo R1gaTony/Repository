@@ -25,5 +25,9 @@ namespace LeBataillon.Database.Context
             modelBuilder.Entity<Game>().HasData(List.Games);
             modelBuilder.Entity<Team>().HasData(List.Teams);
         }
+        public LeBataillonDbContext(DbContextOptions<LeBataillonDbContext> options) : base(options)
+        {
+
+        }
     }
 }

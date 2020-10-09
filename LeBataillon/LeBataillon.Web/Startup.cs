@@ -28,7 +28,7 @@ namespace LeBataillon.Web
 
             services.AddDbContext<LeBataillonDbContext>(options => 
                     {
-                    options.UseSqlServer(Configuration.GetConnectionString("MaisonReveContext"));
+                    options.UseSqlServer(Configuration.GetConnectionString("LeBataillonDbContext"));
                     });
         }
 
