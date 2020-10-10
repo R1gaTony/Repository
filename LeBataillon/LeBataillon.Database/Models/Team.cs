@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LeBataillon.Database.Models
 {
-    public class Team
+    public class Team : IValidatableObject
     {
         
         public Team()

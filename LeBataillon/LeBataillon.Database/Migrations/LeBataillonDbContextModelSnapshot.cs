@@ -29,10 +29,10 @@ namespace LeBataillon.Database.Migrations
                     b.Property<DateTime>("GameDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TeamAttackerId")
+                    b.Property<int?>("TeamAttackerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeamDefendantId")
+                    b.Property<int?>("TeamDefendantId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1207,6 +1207,7 @@ namespace LeBataillon.Database.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TeamName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -1270,15 +1271,11 @@ namespace LeBataillon.Database.Migrations
                 {
                     b.HasOne("LeBataillon.Database.Models.Team", "TeamAttacker")
                         .WithMany()
-                        .HasForeignKey("TeamAttackerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeamAttackerId");
 
                     b.HasOne("LeBataillon.Database.Models.Team", "TeamDefendant")
                         .WithMany()
-                        .HasForeignKey("TeamDefendantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeamDefendantId");
                 });
 
             modelBuilder.Entity("LeBataillon.Database.Models.Player", b =>

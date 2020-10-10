@@ -43,13 +43,13 @@ namespace LeBataillon.Database.Models
 
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
         public int Id { get; set; }
-        
+        [Required]
         public DateTime GameDateTime { get; set; }
        
-        public int TeamDefendantId { get; set; }
+        public int? TeamDefendantId { get; set; }
         public virtual Team TeamDefendant {get; set;}
 
-        public int TeamAttackerId { get; set; }
+        public int? TeamAttackerId { get; set; }
         public virtual Team TeamAttacker {get;set;}
     }
 }

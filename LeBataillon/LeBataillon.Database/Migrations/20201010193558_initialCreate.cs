@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LeBataillon.Database.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace LeBataillon.Database.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TeamName = table.Column<string>(nullable: true),
+                    TeamName = table.Column<string>(nullable: false),
                     CaptainId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -28,8 +28,8 @@ namespace LeBataillon.Database.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GameDateTime = table.Column<DateTime>(nullable: false),
-                    TeamDefendantId = table.Column<int>(nullable: false),
-                    TeamAttackerId = table.Column<int>(nullable: false)
+                    TeamDefendantId = table.Column<int>(nullable: true),
+                    TeamAttackerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -39,13 +39,13 @@ namespace LeBataillon.Database.Migrations
                         column: x => x.TeamAttackerId,
                         principalTable: "Teams",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Games_Teams_TeamDefendantId",
                         column: x => x.TeamDefendantId,
                         principalTable: "Teams",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
