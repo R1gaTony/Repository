@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using LeBataillon.Database.Repository;
 
 namespace LeBataillon.Web
 {
@@ -30,7 +31,9 @@ namespace LeBataillon.Web
                     {
                     options.UseSqlServer(Configuration.GetConnectionString("LeBataillonDbContext"));
                     });
-            
+            services.AddSingleton<PlayerRepository>();
+            services.AddSingleton<GameRepository>();
+            services.AddSingleton<TeamRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

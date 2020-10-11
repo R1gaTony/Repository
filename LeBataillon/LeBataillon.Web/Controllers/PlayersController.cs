@@ -7,36 +7,41 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LeBataillon.Database.Context;
 using LeBataillon.Database.Models;
+using LeBataillon.Database.Repository;
 
 namespace LeBataillon.Web.Controllers
 {
     public class PlayersController : Controller
     {
         private readonly LeBataillonDbContext _context;
+        private PlayerRepository _repo;
 
         public PlayersController(LeBataillonDbContext context)
         {
             _context = context;
         }
 
-        // GET: Players
-        public async Task<IActionResult> Index()
+        public PlayersController(PlayerRepository @Object)
         {
-            var leBataillonDbContext = _context.Players.Include(p => p.Team);
-            return View(await leBataillonDbContext.ToListAsync());
+            this._repo = @Object;
+        }
+
+        // GET: Players
+        public IActionResult Index()
+        {
+            var leBataillonDbContext = _repo.GetAll();
+            return View(leBataillonDbContext);
         }
 
         // GET: Players/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var player = await _context.Players
-                .Include(p => p.Team)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var player = _repo.GetById((int)id);
             if (player == null)
             {
                 return NotFound();
@@ -48,7 +53,7 @@ namespace LeBataillon.Web.Controllers
         // GET: Players/Create
         public IActionResult Create()
         {
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "TeamName");
+            ViewData["TeamId"] = new SelectList(_repo.GetAll());
             return View();
         }
 
@@ -57,32 +62,31 @@ namespace LeBataillon.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NickName,Email,PhoneNumber,FirstName,LastName,Level,TeamId")] Player player)
+        public IActionResult Create([Bind("Id,NickName,Email,PhoneNumber,FirstName,LastName,Level,TeamId")] Player player)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(player);
-                await _context.SaveChangesAsync();
+                _repo.Add(player);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "TeamName", player.TeamId);
+            ViewData["TeamId"] = new SelectList(_repo.GetAll().Where(p => p.TeamId == player.TeamId));
             return View(player);
         }
 
         // GET: Players/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var player = await _context.Players.FindAsync(id);
+            var player = _repo.GetById((int)id);
             if (player == null)
             {
                 return NotFound();
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "TeamName", player.TeamId);
+            ViewData["TeamId"] = new SelectList(_repo.GetAll().Where(p => p.TeamId == player.TeamId));
             return View(player);
         }
 
@@ -91,7 +95,7 @@ namespace LeBataillon.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NickName,Email,PhoneNumber,FirstName,LastName,Level,TeamId")] Player player)
+        public IActionResult Edit(int id, [Bind("Id,NickName,Email,PhoneNumber,FirstName,LastName,Level,TeamId")] Player player)
         {
             if (id != player.Id)
             {
@@ -102,8 +106,7 @@ namespace LeBataillon.Web.Controllers
             {
                 try
                 {
-                    _context.Update(player);
-                    await _context.SaveChangesAsync();
+                    _repo.Edit(player);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,21 +121,19 @@ namespace LeBataillon.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "TeamName", player.TeamId);
+            ViewData["TeamId"] = new SelectList(_repo.GetAll().Where(p => p.TeamId == player.TeamId));
             return View(player);
         }
 
         // GET: Players/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var player = await _context.Players
-                .Include(p => p.Team)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var player = _repo.GetById((int)id);
             if (player == null)
             {
                 return NotFound();
@@ -144,17 +145,15 @@ namespace LeBataillon.Web.Controllers
         // POST: Players/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var player = await _context.Players.FindAsync(id);
-            _context.Players.Remove(player);
-            await _context.SaveChangesAsync();
+            _repo.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool PlayerExists(int id)
         {
-            return _context.Players.Any(e => e.Id == id);
+            return _repo.GetById((int)id) != null ? true : false;
         }
     }
 }

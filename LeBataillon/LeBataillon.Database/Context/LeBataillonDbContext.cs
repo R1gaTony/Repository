@@ -20,7 +20,7 @@ namespace LeBataillon.Database.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder){
             //seed
             PlayerData List = new PlayerData();
-
+            
             modelBuilder.Entity<Player>().HasData(List.Players);
             modelBuilder.Entity<Game>().HasData(List.Games);
             modelBuilder.Entity<Team>().HasData(List.Teams);

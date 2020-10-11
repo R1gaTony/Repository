@@ -11,16 +11,15 @@ using LeBataillon.Database.Repository;
 
 namespace LeBataillon.Test
 {
-    public class PlayerTest
+    public class TeamTest
     {
-
         [Fact]
         public void PlayerIndex_Test()
         {
             //Arrange
-            var MockRepo = new Mock<PlayerRepository>();
-            MockRepo.Setup(n => n.GetAll()).Returns(PlayerMockData.GetPlayersTest());
-            var controller = new PlayersController(MockRepo.Object);
+            var MockRepo = new Mock<TeamRepository>();
+            MockRepo.Setup(n => n.GetAll()).Returns(TeamMockData.GetTeamsTest());
+            var controller = new TeamsController(MockRepo.Object);
 
             //act
             var result = controller.Index();
@@ -32,39 +31,32 @@ namespace LeBataillon.Test
         public void PlayerIndexList_Test()
         {
             //Arrange
-            var MockRepo = new Mock<PlayerRepository>();
-            MockRepo.Setup(n => n.GetAll()).Returns(PlayerMockData.GetPlayersTest());
-            var controller = new PlayersController(MockRepo.Object);
+            var MockRepo = new Mock<TeamRepository>();
+            MockRepo.Setup(n => n.GetAll()).Returns(TeamMockData.GetTeamsTest());
+            var controller = new TeamsController(MockRepo.Object);
 
             //act
             var result = controller.Index();
 
             //Assert
             var ViewResult = result as IActionResult;
-            Assert.IsAssignableFrom<List<Player>>(ViewResult.ToString());
+            Assert.IsAssignableFrom<List<Team>>(ViewResult.ToString());
         }
         [Fact]
-          public void PlayerIndexNombre_Test()
+          public void BuildingIndexNombre_Test()
         {
             //arrange
-            var MockRepo = new Mock<PlayerRepository>();
-            MockRepo.Setup(n => n.GetAll()).Returns(PlayerMockData.GetPlayersTest());
-            var controller = new PlayersController(MockRepo.Object);
+            var MockRepo = new Mock<TeamRepository>();
+            MockRepo.Setup(n => n.GetAll()).Returns(TeamMockData.GetTeamsTest());
+            var controller = new TeamsController(MockRepo.Object);
 
             //act
             var result = controller.Index();
 
             //assert
             var viewResult = result as IActionResult;
-            var viewResultPlayer = viewResult as List<Player>;
-            Assert.Equal(30, viewResultPlayer.Count);
+            var viewResultTeam = viewResult as List<Team>;
+            Assert.Equal(5, viewResultTeam.Count);
         }
-
-        [Fact]
-        public void Create()
-        {
-
-        }
- 
     }
 }

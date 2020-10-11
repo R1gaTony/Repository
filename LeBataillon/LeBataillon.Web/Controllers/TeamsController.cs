@@ -7,34 +7,40 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LeBataillon.Database.Context;
 using LeBataillon.Database.Models;
+using LeBataillon.Database.Repository;
 
 namespace LeBataillon.Web.Controllers
 {
     public class TeamsController : Controller
     {
         private readonly LeBataillonDbContext _context;
+        private TeamRepository _repo;
 
         public TeamsController(LeBataillonDbContext context)
         {
             _context = context;
         }
 
-        // GET: Teams
-        public async Task<IActionResult> Index()
+        public TeamsController(TeamRepository @Object)
         {
-            return View(await _context.Teams.ToListAsync());
+            this._repo = @Object;
+        }
+
+        // GET: Teams
+        public IActionResult Index()
+        {
+            return View(_repo.GetAll());
         }
 
         // GET: Teams/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var team = await _context.Teams
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var team = _repo.GetById((int)id);
             if (team == null)
             {
                 return NotFound();
@@ -54,26 +60,25 @@ namespace LeBataillon.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TeamName,CaptainId")] Team team)
+        public IActionResult Create([Bind("Id,TeamName,CaptainId")] Team team)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(team);
-                await _context.SaveChangesAsync();
+                _repo.Add(team);
                 return RedirectToAction(nameof(Index));
             }
             return View(team);
         }
 
         // GET: Teams/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var team = await _context.Teams.FindAsync(id);
+            var team = _repo.GetById((int)id);
             if (team == null)
             {
                 return NotFound();
@@ -86,7 +91,7 @@ namespace LeBataillon.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TeamName,CaptainId")] Team team)
+        public IActionResult Edit(int id, [Bind("Id,TeamName,CaptainId")] Team team)
         {
             if (id != team.Id)
             {
@@ -97,8 +102,7 @@ namespace LeBataillon.Web.Controllers
             {
                 try
                 {
-                    _context.Update(team);
-                    await _context.SaveChangesAsync();
+                    _repo.Edit(team);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -117,15 +121,14 @@ namespace LeBataillon.Web.Controllers
         }
 
         // GET: Teams/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var team = await _context.Teams
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var team = _repo.GetById((int)id);
             if (team == null)
             {
                 return NotFound();
@@ -137,17 +140,15 @@ namespace LeBataillon.Web.Controllers
         // POST: Teams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var team = await _context.Teams.FindAsync(id);
-            _context.Teams.Remove(team);
-            await _context.SaveChangesAsync();
+            _repo.Delete((int)id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool TeamExists(int id)
         {
-            return _context.Teams.Any(e => e.Id == id);
+            return _repo.GetById((int)id) != null ? true : false;
         }
     }
 }
