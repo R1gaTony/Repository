@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {}
+    "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {}
   },
   "projects": {
-    "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {
+    "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj",
+        "projectUniqueName": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj",
         "projectName": "LeBataillon.Database",
-        "projectPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj",
+        "projectPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj",
         "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\obj\\",
+        "outputPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",

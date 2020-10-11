@@ -8626,11 +8626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
+      "projectUniqueName": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
       "projectName": "LeBataillon.Web",
-      "projectPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
+      "projectPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
       "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-      "outputPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\obj\\",
+      "outputPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8646,8 +8646,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {
-              "projectPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj"
+            "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {
+              "projectPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y70+1o4udJuXDBMKO2NZkgNsm051RpvuyI78KXZmOGdqBIiSytD4dSwNHWG1GF+fAxSPUgXu0+Bo0MxLfpg0/A==",
+  "dgSpecHash": "wtfPqZ8AoYEtUsT5yjiW3JawAOmTrMqiezmzkfEaG9j8NofpkYkBR+qvVm5wFXgranJzLOtNyS8MN644uMoY6w==",
   "success": true,
-  "projectFilePath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj",
+  "projectFilePath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

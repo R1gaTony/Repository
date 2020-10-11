@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "06S+rHaXe+K1NGJYSoEC7uDtyWWzVG1AqOOfEZNMPzuw98eJR9CSFRQ98HfteMzfEiMOdOy939i9kUUPV8N7Kw==",
+  "dgSpecHash": "3X2WJE8XMlFxVl48mQiMeLKVqSCEDwSrAocsqIAr16Z8cX0xM6HIgc0G/A8rIbGqNY/b9OwTmcM7aKd2Gp026Q==",
   "success": true,
-  "projectFilePath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
+  "projectFilePath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

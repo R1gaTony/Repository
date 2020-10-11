@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4mVvsE58vXaLjiyptVokwOrDOWoKR1KAjbHQA/+PUCiu541wakbaYw/r+Ie9jk80sK9Y9q/P5Gb/5CQSdOPOKQ==",
+  "dgSpecHash": "bNC4TuHCP6x0sRPWFvoKG1mpsKZkEs37KTb0yW5reO82qeqKhoQfCFhZUkwBST/VzAsIaqzuBCxzE1FJD5eduA==",
   "success": true,
-  "projectFilePath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
+  "projectFilePath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",

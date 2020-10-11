@@ -9431,7 +9431,7 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 3.1.6",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "coverlet.collector >= 1.2.0",
-      "moq >= *",
+      "moq >= 4.14.6",
       "xunit >= 2.4.0",
       "xunit.runner.visualstudio >= 2.4.0"
     ]
@@ -9442,11 +9442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
+      "projectUniqueName": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
       "projectName": "LeBataillon.Test",
-      "projectPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
+      "projectPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
       "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-      "outputPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\obj\\",
+      "outputPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9462,11 +9462,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {
-              "projectPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj"
+            "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj": {
+              "projectPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Database\\LeBataillon.Database.csproj"
             },
-            "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj": {
-              "projectPath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj"
+            "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj": {
+              "projectPath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Web\\LeBataillon.Web.csproj"
             }
           }
         }
@@ -9494,7 +9494,7 @@
           },
           "moq": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[4.14.6, )"
           },
           "xunit": {
             "target": "Package",
