@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rjM6sINBUlliFuVrcWudUXRI4JvC2FyoZVb+KQuWQ9fOPx9JVYhX9s9107QDROXyeNCzVOa2ToR0HMtAK3DbaQ==",
+  "dgSpecHash": "4mVvsE58vXaLjiyptVokwOrDOWoKR1KAjbHQA/+PUCiu541wakbaYw/r+Ie9jk80sK9Y9q/P5Gb/5CQSdOPOKQ==",
   "success": true,
-  "projectFilePath": "e:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
+  "projectFilePath": "E:\\Cegep informatique\\Automne 2020\\Prog Web Transactionnelle\\GitKraken\\Repository\\LeBataillon\\LeBataillon.Test\\LeBataillon.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
@@ -58,6 +58,7 @@
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.4\\microsoft.visualstudio.web.codegenerators.mvc.3.1.4.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Tony\\.nuget\\packages\\moq\\4.14.6\\moq.4.14.6.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
