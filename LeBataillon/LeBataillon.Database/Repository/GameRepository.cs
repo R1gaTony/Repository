@@ -6,9 +6,18 @@ using LeBataillon.Database.Models;
 
 namespace LeBataillon.Database.Repository
 {
-    public class GameRepository
+    public interface IGameRepository
     {
-        
+        void Add(Game game);
+        void Delete(int id);
+        void Edit(Game game);
+        List<Game> GetAll();
+        Game GetById(int id);
+    }
+
+    public class GameRepository : IGameRepository
+    {
+
         private readonly LeBataillonDbContext _context;
         public GameRepository(LeBataillonDbContext context)
         {
@@ -23,7 +32,7 @@ namespace LeBataillon.Database.Repository
         public Game GetById(int id)
         {
             return _context.Games
-               
+
                 .FirstOrDefault(m => m.Id == id);
         }
         public void Add(Game game)

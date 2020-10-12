@@ -13,15 +13,9 @@ namespace LeBataillon.Web.Controllers
 {
     public class TeamsController : Controller
     {
-        private readonly LeBataillonDbContext _context;
-        private TeamRepository _repo;
+        private ITeamRepository _repo;
 
-        public TeamsController(LeBataillonDbContext context)
-        {
-            _context = context;
-        }
-
-        public TeamsController(TeamRepository @Object)
+        public TeamsController(ITeamRepository @Object)
         {
             this._repo = @Object;
         }

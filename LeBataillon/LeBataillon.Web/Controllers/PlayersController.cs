@@ -13,15 +13,9 @@ namespace LeBataillon.Web.Controllers
 {
     public class PlayersController : Controller
     {
-        private readonly LeBataillonDbContext _context;
-        private PlayerRepository _repo;
+        private IPlayerRepository _repo;
 
-        public PlayersController(LeBataillonDbContext context)
-        {
-            _context = context;
-        }
-
-        public PlayersController(PlayerRepository @Object)
+        public PlayersController(IPlayerRepository @Object)
         {
             this._repo = @Object;
         }

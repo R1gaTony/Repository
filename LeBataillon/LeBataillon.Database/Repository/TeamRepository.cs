@@ -6,19 +6,23 @@ using LeBataillon.Database.Models;
 
 namespace LeBataillon.Database.Repository
 {
-    public class TeamRepository
+    public interface ITeamRepository
+    {
+        void Add(Team Team);
+        void Delete(int id);
+        void Edit(Team Team);
+        List<Team> GetAll();
+        Team GetById(int id);
+        object Index();
+    }
+
+    public class TeamRepository : ITeamRepository
     {
         private readonly LeBataillonDbContext _context;
-        private TeamRepository @object;
 
         public TeamRepository(LeBataillonDbContext context)
         {
             _context = context;
-        }
-
-        public TeamRepository(TeamRepository @object)
-        {
-            this.@object = @object;
         }
 
         public List<Team> GetAll()
@@ -34,14 +38,14 @@ namespace LeBataillon.Database.Repository
         public Team GetById(int id)
         {
             return _context.Teams
-               
+
                 .FirstOrDefault(m => m.Id == id);
         }
         public void Add(Team Team)
         {
             _context.Add(Team);
             _context.SaveChanges();
-        }        
+        }
         public void Edit(Team Team)
         {
             _context.Update(Team);

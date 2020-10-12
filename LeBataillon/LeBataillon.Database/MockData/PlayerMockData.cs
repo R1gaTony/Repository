@@ -8,7 +8,7 @@ namespace LeBataillon.Database.MockData
     {
         public static List<Player> GetPlayersTest()
         {
-            var _Players = new List<Player>();
+            var _Players = new List<Player>()
             {
                 new Player()
                 {
@@ -20,7 +20,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "AngelinaAlias",
                     PhoneNumber = "214-764-3816",
                     TeamId = 1
-                };
+                },
                 new Player()
                 {
                     Id = 2,
@@ -31,7 +31,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "LilianaAlias",
                     PhoneNumber = "742-813-7421",
                     TeamId = 2
-                };
+                },
                 new Player()
                 {
                     Id = 3,
@@ -42,7 +42,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "SherylAlias",
                     PhoneNumber = "367-252-3834",
                     TeamId = 3
-                };
+                },
                 new Player()
                 {
                     Id = 4,
@@ -53,7 +53,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "MariellaAlias",
                     PhoneNumber = "785-411-6446",
                     TeamId = 4
-                };
+                },
                 new Player()
                 {
                     Id = 5,
@@ -64,7 +64,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "BernieceAlias",
                     PhoneNumber = "333-648-2851",
                     TeamId = 5
-                };
+                },
                 new Player()
                 {
                     Id = 6,
@@ -75,7 +75,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "ConradAlias",
                     PhoneNumber = "758-787-5464",
                     TeamId = 6
-                };
+                },
                 new Player()
                 {
                     Id = 7,
@@ -86,7 +86,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "SherleneAlias",
                     PhoneNumber = "476-136-1877",
                     TeamId = 7
-                };
+                },
                 new Player()
                 {
                     Id = 8,
@@ -97,7 +97,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "NicholasAlias",
                     PhoneNumber = "823-375-4482",
                     TeamId = 8
-                };
+                },
                 new Player()
                 {
                     Id = 9,
@@ -108,7 +108,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "TysonAlias",
                     PhoneNumber = "441-434-8815",
                     TeamId = 9
-                };
+                },
                 new Player()
                 {
                     Id = 10,
@@ -119,7 +119,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "DerickAlias",
                     PhoneNumber = "877-663-4428",
                     TeamId = 10
-                };
+                },
                 new Player()
                 {
                     Id = 11,
@@ -130,7 +130,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "LeidaAlias",
                     PhoneNumber = "414-822-7833",
                     TeamId = 5
-                };
+                },
                 new Player()
                 {
                     Id = 12,
@@ -141,7 +141,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "DebiAlias",
                     PhoneNumber = "832-151-3446",
                     TeamId = 9
-                };
+                },
                 new Player()
                 {
                     Id = 13,
@@ -152,7 +152,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "ErnestineAlias",
                     PhoneNumber = "567-318-6851",
                     TeamId = 5
-                };
+                },
                 new Player()
                 {
                     Id = 14,
@@ -163,7 +163,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "AdrianAlias",
                     PhoneNumber = "185-557-2464",
                     TeamId = 1
-                };
+                },
                 new Player()
                 {
                     Id = 15,
@@ -174,7 +174,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "EugenieAlias",
                     PhoneNumber = "523-786-6877",
                     TeamId = 6
-                };
+                },
                 new Player()
                 {
                     Id = 16,
@@ -185,7 +185,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "CathrynAlias",
                     PhoneNumber = "158-845-1482",
                     TeamId = 1
-                };
+                },
                 new Player()
                 {
                     Id = 17,
@@ -196,7 +196,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "JamalAlias",
                     PhoneNumber = "576-284-5815",
                     TeamId = 6
-                };
+                },
                 new Player()
                 {
                     Id = 18,
@@ -207,7 +207,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "EmelyAlias",
                     PhoneNumber = "213-433-8428",
                     TeamId = 2
-                };
+                },
                 new Player()
                 {
                     Id = 19,
@@ -218,7 +218,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "ArielleAlias",
                     PhoneNumber = "641-572-4833",
                     TeamId = 6
-                };
+                },
                 new Player()
                 {
                     Id = 20,
@@ -229,7 +229,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "StevenAlias",
                     PhoneNumber = "266-721-7446",
                     TeamId = 2
-                };
+                },
                 new Player()
                 {
                     Id = 21,
@@ -240,7 +240,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "RomaAlias",
                     PhoneNumber = "684-168-3851",
                     TeamId = 7
-                };
+                },
                 new Player()
                 {
                     Id = 22,
@@ -251,7 +251,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "SimonneAlias",
                     PhoneNumber = "232-327-7464",
                     TeamId = 2
-                };
+                },
                 new Player()
                 {
                     Id = 23,
@@ -262,7 +262,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "JeanettaAlias",
                     PhoneNumber = "657-456-2877",
                     TeamId = 7
-                };
+                },
                 new Player()
                 {
                     Id = 24,
@@ -273,7 +273,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "AngelinaAlias",
                     PhoneNumber = "375-615-6481",
                     TeamId = 3
-                };
+                },
                 new Player()
                 {
                     Id = 25,
@@ -284,7 +284,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "MagenAlias",
                     PhoneNumber = "722-844-1814",
                     TeamId = 8
-                };
+                },
                 new Player()
                 {
                     Id = 26,
@@ -295,7 +295,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "JaneAlias",
                     PhoneNumber = "348-183-5427",
                     TeamId = 3
-                };
+                },
                 new Player()
                 {
                     Id = 27,
@@ -306,7 +306,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "TonitaAlias",
                     PhoneNumber = "766-342-1832",
                     TeamId = 8
-                };
+                },
                 new Player()
                 {
                     Id = 28,
@@ -317,7 +317,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "DinaAlias",
                     PhoneNumber = "313-571-4445",
                     TeamId = 4
-                };
+                },
                 new Player()
                 {
                     Id = 29,
@@ -328,7 +328,7 @@ namespace LeBataillon.Database.MockData
                     NickName = "ConradAlias",
                     PhoneNumber = "831-638-8858",
                     TeamId = 8
-                };
+                },
                 new Player()
                 {
                     Id = 30,
@@ -339,8 +339,8 @@ namespace LeBataillon.Database.MockData
                     NickName = "AdellAlias",
                     PhoneNumber = "456-877-3463",
                     TeamId = 4
-                };
-            }
+                },
+            };
             return _Players;
         }
     }

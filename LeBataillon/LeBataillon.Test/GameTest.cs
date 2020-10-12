@@ -17,9 +17,11 @@ namespace LeBataillon.Test
         public void GameIndex_Test()
         {
             //Arrange
-            var MockRepo = new Mock<GameRepository>();
-            MockRepo.Setup(n => n.GetAll().Returns(GameMockData.GetGamesTest()));
-            var controller = new GamesController(MockRepo.Object);
+            var MockRepo = new Mock<IGameRepository>();
+            var MockTeamRepo = new Mock<ITeamRepository>();
+            MockRepo.Setup(n => n.GetAll()).Returns(GameMockData.GetGamesTest());
+            var controller = new GamesController(MockRepo.Object,MockTeamRepo.Object);
+
 
             //act
             var result = controller.Index();
@@ -31,32 +33,35 @@ namespace LeBataillon.Test
         public void GameIndexList_Test()
         {
             //Arrange
-            var MockRepo = new Mock<GameRepository>();
+            var MockRepo = new Mock<IGameRepository>();
+            var MockTeamRepo = new Mock<ITeamRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(GameMockData.GetGamesTest());
-            var controller = new GamesController(MockRepo.Object);
+            var controller = new GamesController(MockRepo.Object,MockTeamRepo.Object);
 
             //act
             var result = controller.Index();
 
             //Assert
-            var ViewResult = result as IActionResult;
-            Assert.IsAssignableFrom<List<Player>>(ViewResult.ToString());
+            var viewResult = result as ViewResult;
+             Assert.IsAssignableFrom<List<Game>>(viewResult.ViewData.Model);
         }
         [Fact]
           public void GameIndexNombre_Test()
         {
             //arrange
-            var MockRepo = new Mock<GameRepository>();
+            var MockRepo = new Mock<IGameRepository>();
+            var MockTeamRepo = new Mock<ITeamRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(GameMockData.GetGamesTest());
-            var controller = new GamesController(MockRepo.Object);
+            var controller = new GamesController(MockRepo.Object,MockTeamRepo.Object);
 
             //act
             var result = controller.Index();
-
+                
             //assert
-            var viewResult = result as IActionResult;
-            var viewResultGame = viewResult as List<Game>;
-            Assert.Equal(3, viewResultGame.Count);
+            var viewResult = result as ViewResult;
+            var viewResultBuildings = viewResult.ViewData.Model as List<Game>;
+            Assert.Equal(3, viewResultBuildings.Count);
         }
+        
     }
 }

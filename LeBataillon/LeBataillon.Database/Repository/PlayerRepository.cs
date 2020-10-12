@@ -6,7 +6,16 @@ using LeBataillon.Database.Models;
 
 namespace LeBataillon.Database.Repository
 {
-    public class PlayerRepository
+    public interface IPlayerRepository
+    {
+        void Add(Player Player);
+        void Delete(int id);
+        void Edit(Player Player);
+        List<Player> GetAll();
+        Player GetById(int id);
+    }
+
+    public class PlayerRepository : IPlayerRepository
     {
         private readonly LeBataillonDbContext _context;
         public PlayerRepository(LeBataillonDbContext context)
@@ -22,14 +31,14 @@ namespace LeBataillon.Database.Repository
         public Player GetById(int id)
         {
             return _context.Players
-               
+
                 .FirstOrDefault(m => m.Id == id);
         }
         public void Add(Player Player)
         {
             _context.Add(Player);
             _context.SaveChanges();
-        }        
+        }
         public void Edit(Player Player)
         {
             _context.Update(Player);

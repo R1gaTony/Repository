@@ -18,7 +18,7 @@ namespace LeBataillon.Test
         public void PlayerIndex_Test()
         {
             //Arrange
-            var MockRepo = new Mock<PlayerRepository>();
+            var MockRepo = new Mock<IPlayerRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(PlayerMockData.GetPlayersTest());
             var controller = new PlayersController(MockRepo.Object);
 
@@ -32,7 +32,7 @@ namespace LeBataillon.Test
         public void PlayerIndexList_Test()
         {
             //Arrange
-            var MockRepo = new Mock<PlayerRepository>();
+            var MockRepo = new Mock<IPlayerRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(PlayerMockData.GetPlayersTest());
             var controller = new PlayersController(MockRepo.Object);
 
@@ -40,14 +40,14 @@ namespace LeBataillon.Test
             var result = controller.Index();
 
             //Assert
-            var ViewResult = result as IActionResult;
-            Assert.IsAssignableFrom<List<Player>>(ViewResult.ToString());
+            var viewResult = result as ViewResult;
+            Assert.IsAssignableFrom<List<Player>>(viewResult.ViewData.Model);
         }
         [Fact]
           public void PlayerIndexNombre_Test()
         {
             //arrange
-            var MockRepo = new Mock<PlayerRepository>();
+            var MockRepo = new Mock<IPlayerRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(PlayerMockData.GetPlayersTest());
             var controller = new PlayersController(MockRepo.Object);
 
@@ -55,15 +55,9 @@ namespace LeBataillon.Test
             var result = controller.Index();
 
             //assert
-            var viewResult = result as IActionResult;
-            var viewResultPlayer = viewResult as List<Player>;
-            Assert.Equal(30, viewResultPlayer.Count);
-        }
-
-        [Fact]
-        public void Create()
-        {
-
+            var viewResult = result as ViewResult;
+            var viewResultBuildings = viewResult.ViewData.Model as List<Player>;
+            Assert.Equal(30, viewResultBuildings.Count);
         }
  
     }

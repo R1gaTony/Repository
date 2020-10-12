@@ -31,9 +31,9 @@ namespace LeBataillon.Web
                     {
                     options.UseSqlServer(Configuration.GetConnectionString("LeBataillonDbContext"));
                     });
-            services.AddSingleton<PlayerRepository>();
-            services.AddSingleton<GameRepository>();
-            services.AddSingleton<TeamRepository>();
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
+            services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<ITeamRepository, TeamRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

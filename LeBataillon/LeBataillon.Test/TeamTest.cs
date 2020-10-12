@@ -17,7 +17,7 @@ namespace LeBataillon.Test
         public void PlayerIndex_Test()
         {
             //Arrange
-            var MockRepo = new Mock<TeamRepository>();
+            var MockRepo = new Mock<ITeamRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(TeamMockData.GetTeamsTest());
             var controller = new TeamsController(MockRepo.Object);
 
@@ -31,7 +31,7 @@ namespace LeBataillon.Test
         public void PlayerIndexList_Test()
         {
             //Arrange
-            var MockRepo = new Mock<TeamRepository>();
+            var MockRepo = new Mock<ITeamRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(TeamMockData.GetTeamsTest());
             var controller = new TeamsController(MockRepo.Object);
 
@@ -39,14 +39,14 @@ namespace LeBataillon.Test
             var result = controller.Index();
 
             //Assert
-            var ViewResult = result as IActionResult;
-            Assert.IsAssignableFrom<List<Team>>(ViewResult.ToString());
+            var viewResult = result as ViewResult;
+            Assert.IsAssignableFrom<List<Team>>(viewResult.ViewData.Model);
         }
         [Fact]
           public void BuildingIndexNombre_Test()
         {
             //arrange
-            var MockRepo = new Mock<TeamRepository>();
+            var MockRepo = new Mock<ITeamRepository>();
             MockRepo.Setup(n => n.GetAll()).Returns(TeamMockData.GetTeamsTest());
             var controller = new TeamsController(MockRepo.Object);
 
@@ -54,9 +54,9 @@ namespace LeBataillon.Test
             var result = controller.Index();
 
             //assert
-            var viewResult = result as IActionResult;
-            var viewResultTeam = viewResult as List<Team>;
-            Assert.Equal(5, viewResultTeam.Count);
+            var viewResult = result as ViewResult;
+            var viewResultBuildings = viewResult.ViewData.Model as List<Team>;
+            Assert.Equal(5, viewResultBuildings.Count);
         }
     }
 }

@@ -13,17 +13,13 @@ namespace LeBataillon.Web.Controllers
 {
     public class GamesController : Controller
     {
-        private readonly LeBataillonDbContext _context;
-        private GameRepository _repo;
+        private IGameRepository _repo;
+        private ITeamRepository _repoTeam;
 
-        public GamesController(LeBataillonDbContext context)
-        {
-            _context = context;
-        }
-
-        public GamesController(GameRepository @Object)
+        public GamesController(IGameRepository @Object, ITeamRepository Team)
         {
             this._repo = @Object;
+            this._repoTeam = Team;
         }
 
         // GET: Games
@@ -53,8 +49,8 @@ namespace LeBataillon.Web.Controllers
         // GET: Games/Create
         public IActionResult Create()
         {
-            ViewData["TeamAttackerId"] = new SelectList(_repo.GetAll(), "Id", "TeamName");
-            ViewData["TeamDefendantId"] = new SelectList(_repo.GetAll(), "Id", "TeamName");
+            ViewData["TeamAttackerId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName");
+            ViewData["TeamDefendantId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName");
             return View();
         }
 
@@ -70,8 +66,8 @@ namespace LeBataillon.Web.Controllers
                 _repo.Add(game);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamAttackerId"] = new SelectList(_repo.GetAll(), "Id", "TeamName", game.TeamAttackerId);
-            ViewData["TeamDefendantId"] = new SelectList(_repo.GetAll(), "Id", "TeamName", game.TeamDefendantId);
+            ViewData["TeamAttackerId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName", game.TeamAttackerId);
+            ViewData["TeamDefendantId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName", game.TeamDefendantId);
             return View(game);
         }
 
@@ -88,8 +84,8 @@ namespace LeBataillon.Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["TeamAttackerId"] = new SelectList(_repo.GetAll(), "Id", "TeamName", game.TeamAttackerId);
-            ViewData["TeamDefendantId"] = new SelectList(_repo.GetAll(), "Id", "TeamName", game.TeamDefendantId);
+            ViewData["TeamAttackerId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName", game.TeamAttackerId);
+            ViewData["TeamDefendantId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName", game.TeamDefendantId);
             return View(game);
         }
 
@@ -125,8 +121,8 @@ namespace LeBataillon.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamAttackerId"] = new SelectList(_repo.GetAll(), "Id", "TeamName", game.TeamAttackerId);
-            ViewData["TeamDefendantId"] = new SelectList(_repo.GetAll(), "Id", "TeamName", game.TeamDefendantId);
+            ViewData["TeamAttackerId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName", game.TeamAttackerId);
+            ViewData["TeamDefendantId"] = new SelectList(_repoTeam.GetAll(), "Id", "TeamName", game.TeamDefendantId);
             return View(game);
         }
 
